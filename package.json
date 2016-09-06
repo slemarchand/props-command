@@ -1,0 +1,19 @@
+{
+  "name": "props-command",
+  "version": "0.1.0",
+  "description": "Command-line tool to manipulate Java properties files",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sébastien Le Marchand",
+  "license": "ISC",
+  "preferGlobal": true,
+  "bin": {
+    "props": "index.js"
+  },
+  "dependencies": {
+    "fs-extra": "^0.30.0",
+    "moment": "^2.14.1",
+    "properties": "^1.2.1"
+  }
+}
