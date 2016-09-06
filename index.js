@@ -88,22 +88,22 @@ var format = function(path) {
 
 var subset = function(path, pattern) {
 	
-	backup(path);
-
 	var regexp = new RegExp(pattern);
 
 	var data = read(path);
 
-	var dataSubset = {};
+	var subsetData = {};
 
 	Object.keys(data).forEach(function(key) {
 		var result = regexp.exec(key);
 	    if(result != null && result[0] === key) {
-	    	dataSubset[key] = data[key];
+	    	subsetData[key] = data[key];
 	    }
 	});
 
-	write(path, dataSubset);
+	var subsetPath = path + '.subset';
+
+	write(subsetPath, subsetData);
 };
 
 var args = process.argv.slice(2);
