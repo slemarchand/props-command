@@ -3,7 +3,7 @@ Command-line tool to manipulate Java properties files
 
 ## Installation
 
-```npm -g install props```
+```npm -g install props-command```
 
 ## Usage
 
