@@ -32,7 +32,7 @@ var main = function(args) {
 
 	} else if(subcommand == 'format' || subcommand == 'sort') {
 
-		if(args.length != 1) raiseArgsError();
+		if(args.length != 2) raiseArgsError();
 
 		var path = args[1];
 
@@ -40,7 +40,7 @@ var main = function(args) {
 
 	} else if(subcommand == 'subset') {
 
-		if(args.length != 2) raiseArgsError();
+		if(args.length != 3) raiseArgsError();
 
 		var path = args[1];
 
@@ -50,7 +50,7 @@ var main = function(args) {
 
 	} else if(subcommand == 'from-xlsx') {
 
-		if(args.length != 3) raiseArgsError();
+		if(args.length != 4) raiseArgsError();
 
 		var excelPath = args[1];
 
