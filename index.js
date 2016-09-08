@@ -22,7 +22,7 @@ var main = function(args) {
 
 	if(subcommand == 'merge') {
 
-		if(args.length != 2) raiseArgsError();
+		if(args.length != 3) raiseArgsError();
 
 		var fromPath = args[1];
 
