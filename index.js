@@ -6,7 +6,11 @@ var fse = require('fs-extra');
 
 var properties = require ('properties');
 
-var moment = require('moment')
+var moment = require('moment');
+
+var XLSX = require('xlsx');
+
+var fileExists = require('file-exists');
 
 var main = function(args) {
 
@@ -33,6 +37,18 @@ var main = function(args) {
 		var pattern = args[2];
 
 		subset(path, pattern);
+
+	} else if(subcommand == 'from-xlsx') {
+
+		var excelPath = args[1];
+
+		var configPath = args[2];
+
+		var path = args[3];
+
+		var config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+
+		extractFromExcel(excelPath, config, path);
 	} 
 }
 
@@ -104,6 +120,68 @@ var subset = function(path, pattern) {
 	var subsetPath = path + '.subset';
 
 	write(subsetPath, subsetData);
+};
+
+var extractFromExcel = function(excelPath, config, path) {
+	
+	var data = {};
+
+	if(fileExists(path)) {
+
+		console.log('Target file exists, properties will be merged');
+ 
+		backup(path);
+
+		data = read(path);
+	}
+
+
+	/*
+	
+	Config sample :
+
+		{
+			"sheet": "Sheet 1",
+			"keyColumn": "I",
+			"valueColumn": "H",
+			"firstLine": 2,
+			"lastLine": 7
+		}
+	*/
+
+
+	var keyCol = config.keyColumn,
+	 	valueCol = config.valueColumn,
+	 	start = config.firstLine
+	 	end = config.lastLine;
+
+	var workbook = XLSX.readFile(excelPath);	
+
+	var worksheet = workbook.Sheets[config.sheet];
+
+	if(!worksheet || worksheet == null) {
+		workbook.Sheets[workbook.SheetNames[0]];
+	}
+
+	for (var i = start; i <= end; i++) {
+		
+		var propKeyAddress = keyCol + i;
+
+		if(!worksheet.hasOwnProperty(propKeyAddress )) continue;
+
+		var propKey = worksheet[propKeyAddress].v;
+
+		var propValueAddress = valueCol + i;
+
+		var propValue = worksheet[propValueAddress].v;
+
+		if(propKey && propKey !== "" && propValue && propValue !== "" ) {
+
+			data[propKey] = propValue;
+		}
+	};
+
+	write(path, data);
 };
 
 var args = process.argv.slice(2);
