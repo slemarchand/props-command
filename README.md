@@ -13,11 +13,11 @@ Command-line tool to manipulate Java properties files
 
 ### Command List
 
-`merge`       Merge a properties file into an other properties file.
-`sort`        Sort by keys.
-`format`      Alias for sort command.
-`subset`      Select a subset of properties according to a pattern for keys.
-`from-xlsx`   Extract properties file from an XLSX (Excel) file.
+`merge`       Merge a properties file into an other properties file.  
+`sort`        Sort by keys.  
+`format`      Alias for sort command.  
+`subset`      Select a subset of properties according to a pattern for keys.  
+`from-xlsx`   Extract properties file from an XLSX (Excel) file.  
 
 ### merge
 
