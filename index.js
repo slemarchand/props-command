@@ -12,7 +12,7 @@ var XLSX = require('xlsx');
 
 var fileExists = require('file-exists');
 
-var getUsage = require('command-line-usage')
+var getUsage = require('command-line-usage');
 
 var main = function(args) {
 
