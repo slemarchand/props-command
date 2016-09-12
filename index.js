@@ -183,11 +183,19 @@ var extractFromExcel = function(excelPath, config, path) {
 		
 		var propKeyAddress = keyCol + i;
 
-		if(!worksheet.hasOwnProperty(propKeyAddress )) continue;
+		if(!worksheet.hasOwnProperty(propKeyAddress )) {
+			console.log('Key missing at cell ' + propKeyAddress);
+			continue;
+		}
 
 		var propKey = worksheet[propKeyAddress].v;
 
 		var propValueAddress = valueCol + i;
+
+		if(!worksheet.hasOwnProperty(propValueAddress)) {
+			console.log('Value missing at cell ' + propValueAddress + ' (for key ' + propKey  + ')');
+			continue;
+		}
 
 		var propValue = worksheet[propValueAddress].v;
 
