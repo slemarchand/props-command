@@ -14,8 +14,6 @@ var fileExists = require('file-exists');
 
 var getUsage = require('command-line-usage')
 
-var marked = require('marked');
-
 var main = function(args) {
 
 	var subcommand = args[0];
