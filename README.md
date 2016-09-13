@@ -5,13 +5,17 @@ Command-line tool to manipulate Java properties files
 
 ## Installation
 
-```npm install -g props-command```
+```bash
+npm install -g props-command
+```
 
 ## Usage
 
 ### Synopsis
 
-```$ props <command> <command-args>``` 
+```bash
+$ props <command> <command-args>
+``` 
 
 ### Command List
 
@@ -23,20 +27,24 @@ Command-line tool to manipulate Java properties files
 
 ### merge
 
-```$ props merge <from-properties-file> <into-properties-file>```                   
+```bash
+$ props merge <from-properties-file> <into-properties-file>
+```                   
                                                                             
 Each property of `<from-properties-file>` is added to `<into-properties-file>`. For each property with same key inside the two files, the value from `<from-properties-file>` is used to overwrite the property in `<into-properties-file>.`                                                                        
 
 ### from-xlsx
 
-```$ props from-xlsx <from-excel-file> <excel-file-structure-description> <into-properties-file```                                                             
+```bash
+$ props from-xlsx <from-excel-file> <excel-file-structure-description> <into-properties-file>
+```                                                             
                                                                             
 Each property extracted from `<from-excel-file>` is added to `<into-properties-file>`. For each property with same key inside the two files, the value from `<from-excel-file>` is used to overwrite the property in `<into-properties-file>`.                                                                        
 If `<into-properties-file>` file does not exist, it will be created.            
                                                                             
 `<excel-file-structure-description>` is a JSON file describing where properties keys and values are stored in the Excel file. See sample below:               
                                                                             
-```json
+```js
  {
       "sheet": "Sheet 1",
       "keyColumn": "I",
