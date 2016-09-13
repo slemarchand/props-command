@@ -25,22 +25,16 @@ Command-line tool to manipulate Java properties files
 
 ```$ props merge <from-properties-file> <into-properties-file>```                   
                                                                             
-Each property of `<from-properties-file>` is added to `<into-properties-         
-file>`.For each property with same key inside the two files, the value from    
-`<from-properties-file>` is used to overwrite the property in `<into-properties- 
-file>.`                                                                        
+Each property of `<from-properties-file>` is added to `<into-properties-file>`. For each property with same key inside the two files, the value from `<from-properties-file>` is used to overwrite the property in `<into-properties-file>.`                                                                        
 
 ### from-xlsx
 
 ```$ props from-xlsx <from-excel-file> <excel-file-structure-description> <into-properties-file```                                                             
                                                                             
-Each property extracted from `<from-excel-file>` is added to `<into-properties-  
-file>`.For each property with same key inside the two files, the value from    
-`<from-excel-file>` is used to overwrite the property in `<into-properties-file>`.                                                                        
+Each property extracted from `<from-excel-file>` is added to `<into-properties-file>`. For each property with same key inside the two files, the value from `<from-excel-file>` is used to overwrite the property in `<into-properties-file>`.                                                                        
 If `<into-properties-file>` file does not exist, it will be created.            
                                                                             
-`<excel-file-structure-description>` is a JSON file describing where properties 
-keys and values are stored in the Excel file. See sample below:               
+`<excel-file-structure-description>` is a JSON file describing where properties keys and values are stored in the Excel file. See sample below:               
                                                                             
 ```json
  {
