@@ -42,7 +42,7 @@ If `<into-properties-file>` file does not exist, it will be created.
 `<excel-file-structure-description>` is a JSON file describing where properties 
 keys and values are stored in the Excel file. See sample below:               
                                                                             
-```
+```json
  {
       "sheet": "Sheet 1",
       "keyColumn": "I",
