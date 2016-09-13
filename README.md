@@ -45,13 +45,13 @@ If `<into-properties-file>` file does not exist, it will be created.
 `<excel-file-structure-description>` is a JSON file describing where properties keys and values are stored in the Excel file. See sample below:               
                                                                             
 ```js
- {
-      "sheet": "Sheet 1",
-      "keyColumn": "I",
-      "valueColumn": "H",
-      "firstLine": 2,
-      "lastLine": 7
- }
+{
+	"sheet": "Sheet 1",
+	"keyColumn": "I",
+	"valueColumn": "H",
+	"firstLine": 2,
+	"lastLine": 7
+}
  ```
 
 [nodei-image]: https://nodei.co/npm/props-command.png
