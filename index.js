@@ -14,13 +14,19 @@ var fileExists = require('file-exists');
 
 var getUsage = require('command-line-usage');
 
+var includes = require('array-includes');
+
+var noBackup;
+
 var main = function(args) {
 
 	var subcommand = args[0];
 
+	noBackup = includes(args, '--no-backup');
+
 	if(subcommand == 'merge') {
 
-		if(args.length != 3) raiseArgsError();
+		if(args.length < 3) raiseArgsError();
 
 		var fromPath = args[1];
 
@@ -30,7 +36,7 @@ var main = function(args) {
 
 	} else if(subcommand == 'format' || subcommand == 'sort') {
 
-		if(args.length != 2) raiseArgsError();
+		if(args.length < 2) raiseArgsError();
 
 		var path = args[1];
 
@@ -38,7 +44,7 @@ var main = function(args) {
 
 	} else if(subcommand == 'subset') {
 
-		if(args.length != 3) raiseArgsError();
+		if(args.length < 3) raiseArgsError();
 
 		var path = args[1];
 
@@ -48,7 +54,7 @@ var main = function(args) {
 
 	} else if(subcommand == 'from-xlsx') {
 
-		if(args.length != 4) raiseArgsError();
+		if(args.length < 4) raiseArgsError();
 
 		var excelPath = args[1];
 
@@ -62,7 +68,7 @@ var main = function(args) {
 
 	} else if(subcommand == 'to-json') {
 
-		if(args.length != 3) raiseArgsError();
+		if(args.length < 3) raiseArgsError();
 
 		var path = args[1];
 
@@ -117,6 +123,8 @@ var writeJson = function(path, data) {
 };
 
 var backup = function(path) {
+
+	if(noBackup) return;
 
 	var extension = '.backup-' + moment().format('YYYYMMDDHHmmssSSS');
 

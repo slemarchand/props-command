@@ -16,6 +16,7 @@
     "props": "index.js"
   },
   "dependencies": {
+    "array-includes": "^3.0.2",
     "chai": "^3.5.0",
     "command-line-usage": "^3.0.3",
     "file-exists": "^2.0.0",
