@@ -60,6 +60,16 @@ var main = function(args) {
 
 		extractFromExcel(excelPath, config, path);
 
+	} else if(subcommand == 'to-json') {
+
+		if(args.length != 3) raiseArgsError();
+
+		var path = args[1];
+
+		var jsonPath = args[2];
+
+		toJson(path, jsonPath);
+
 	}  else {
 
 		raiseArgsError();
@@ -80,6 +90,25 @@ var write = function(path, data) {
 	var content = properties.stringify(data);
 
 	var content = content.split('\n').sort().join('\n');
+
+	fs.writeFileSync(path, content, { 
+		encoding: 'utf8',
+		flag: 'w'
+	});
+};
+
+var readJson = function(path) {
+
+	var content = fs.readFileSync(path, 'utf8').toString();
+
+	var data = JSON.parse (content);
+
+	return data;
+};
+
+var writeJson = function(path, data) {
+	
+	var content = JSON.stringify(data);
 
 	fs.writeFileSync(path, content, { 
 		encoding: 'utf8',
@@ -206,6 +235,58 @@ var extractFromExcel = function(excelPath, config, path) {
 	write(path, data);
 };
 
+var toJson = function(path, jsonPath) {
+	
+	var json;
+
+	if(fileExists(jsonPath)) {
+
+		console.log('Target file exists, JSON will be merged');
+ 
+		backup(jsonPath);
+
+		json = readJson(jsonPath);
+	} else {
+		json = {};
+	}
+
+	data = read(path);
+
+	function insert(key, value, target) {
+		var sepIndex = key.indexOf('.');
+		if(sepIndex == -1) {
+			target[key] = value;
+		} else {
+
+			var nextKey = key.substring(sepIndex + 1);
+
+			var targetProperty = key.substring(0, sepIndex);
+
+			var nextTarget;
+
+			if(target.hasOwnProperty(targetProperty)) {
+
+				nextTarget = target[targetProperty];
+
+			} else {
+
+				nextTarget = {};
+
+				target[targetProperty] = nextTarget;
+			}
+
+			insert(nextKey, value, nextTarget);
+		}
+	};
+
+	Object.keys(data).forEach(function(key) {
+		var value = data[key];
+	  	insert(key, value, json)
+	});
+
+	writeJson(jsonPath, json);
+};
+
 var raiseArgsError = function() {
 	printUsage();
 	process.exit();
@@ -283,7 +364,21 @@ var printUsage = function() {
 			+ '          "lastLine": 7\n'
 			+ '     }\n',
 		raw: true	
-	  }
+	  },
+	  {
+	    header: 'TO-JSON',
+	    content: 
+	    	'$ props to-json <properties-file> '
+	    	+ ' <into-json-file>\n\n'
+	    	+ 'Each property extracted from <properties-file> is added to '
+	    	+ '<json-file>. '
+	    	+ 'For each property key containing some dot, a proper nested object is created.'
+	    	+ 'For each property with same key inside the two files, the value '
+	    	+ 'from <properties-file> is used to overwrite the property in '
+	    	+ '<json-file>.\n'
+	    	+ 'If <json-file> file does not exist, it will be '
+	    	+ 'created.\n\n'
+	  },
 	]);
 
 	console.log(usage);
