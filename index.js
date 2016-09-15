@@ -377,7 +377,7 @@ var printUsage = function() {
 	    header: 'TO-JSON',
 	    content: 
 	    	'$ props to-json <properties-file> '
-	    	+ ' <into-json-file>\n\n'
+	    	+ ' <json-file>\n\n'
 	    	+ 'Each property extracted from <properties-file> is added to '
 	    	+ '<json-file>. '
 	    	+ 'For each property key containing some dot, a proper nested object is created.'

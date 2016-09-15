@@ -14,7 +14,7 @@ npm install -g props-command
 ### Synopsis
 
 ```bash
-$ props <command> <command-args>
+$ props <command> <command-args> [<global-options>]
 ``` 
 
 ### Command List
@@ -24,6 +24,10 @@ $ props <command> <command-args>
 * `format`: Alias for sort command.  
 * `subset`: Select a subset of properties according to a pattern for keys.  
 * `from-xlsx`: Extract properties file from an XLSX (Excel) file.  
+
+### Global options
+
+* `--no-backup`: There will no more backup made for overwritten files.
 
 ### merge
 
@@ -53,6 +57,16 @@ If `<into-properties-file>` file does not exist, it will be created.
 	"lastLine": 7
 }
  ```
+
+### to-json
+
+```bash
+$ props to-json <properties-file> <into-properties-file>
+```                   
+          	                                                                      
+Each property extracted from `<properties-file>` is added to `<json-file>`. For each property key containing some dot, a proper nested object is created. For each property with same key inside the two files, the value from `<properties-file>` is used to overwrite the property in `<json-file>`.
+
+If `<json-file>` file does not exist, it will be created.
 
 [nodei-image]: https://nodei.co/npm/props-command.png
 [nodei-url]: https://www.npmjs.com/package/props-command
