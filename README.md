@@ -62,7 +62,7 @@ If `<into-properties-file>` file does not exist, it will be created.
 ### to-json
 
 ```bash
-$ props to-json <properties-file> <into-properties-file>
+$ props to-json <properties-file> <json-file>
 ```                   
           	                                                                      
 Each property extracted from `<properties-file>` is added to `<json-file>`. For each property key containing some dot, a proper nested object is created. For each property with same key inside the two files, the value from `<properties-file>` is used to overwrite the property in `<json-file>`.
