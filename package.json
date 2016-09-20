@@ -3,7 +3,7 @@
   "version": "0.7.0",
   "description": "Command-line tool to manipulate Java properties files",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --recursive --reporter spec"
   },
   "author": "Sébastien Le Marchand",
   "license": "ISC",
