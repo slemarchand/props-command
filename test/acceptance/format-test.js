@@ -2,7 +2,7 @@ var expect = require("chai").expect;
 
 var fse = require('fs-extra');
 
-var child_process = require('child_process');
+var main = require('../../main');
 
 describe("Format Command", function() {
   it("format properties file", function() {
@@ -17,7 +17,7 @@ describe("Format Command", function() {
 
     fse.copySync(inputFilePath, actualFilePath);
 
-    output = child_process.execSync('node index.js format ' + actualFilePath);
+    main.run(['format', actualFilePath]);
 
     var actualContent = fse.readFileSync(actualFilePath, 'utf8').toString();
 
