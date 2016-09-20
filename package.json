@@ -3,7 +3,7 @@
   "version": "0.7.0",
   "description": "Command-line tool to manipulate Java properties files",
   "scripts": {
-    "test": "mocha --recursive --reporter spec",
+    "test": "mocha --reporter spec",
     "cover": "istanbul cover _mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
