@@ -1,7 +1,8 @@
 # props-command
 Command-line tool to manipulate Java properties files
 
-[![Build Status](https://travis-ci.org/slemarchand/props-command.svg?branch=master)](https://travis-ci.org/slemarchand/props-command)  
+[![Build Status](https://travis-ci.org/slemarchand/props-command.svg?branch=master)](https://travis-ci.org/slemarchand/props-command)
+[![Coverage Status](https://coveralls.io/repos/github/slemarchand/props-command/badge.svg?branch=master)](https://coveralls.io/github/slemarchand/props-command?branch=master)  
 [![NPM][nodei-image]][nodei-url]
 
 ## Installation
