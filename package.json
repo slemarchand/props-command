@@ -3,7 +3,8 @@
   "version": "0.7.0",
   "description": "Command-line tool to manipulate Java properties files",
   "scripts": {
-    "test": "mocha --recursive --reporter spec"
+    "test": "mocha --recursive --reporter spec",
+    "cover": "istanbul cover _mocha"
   },
   "author": "Sébastien Le Marchand",
   "license": "ISC",
@@ -17,16 +18,22 @@
   },
   "dependencies": {
     "array-includes": "^3.0.2",
-    "chai": "^3.5.0",
     "command-line-usage": "^3.0.3",
+    "coveralls": "^2.11.14",
     "file-exists": "^2.0.0",
     "fs-extra": "^0.30.0",
-    "mocha": "^3.0.2",
     "moment": "^2.14.1",
     "properties": "^1.2.1",
     "xlsx": "^0.8.0"
   },
   "engines": {
     "node": ">=4.5.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.14",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2",
+    "mocha-lcov-reporter": "^1.2.0"
   }
 }
