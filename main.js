@@ -381,9 +381,13 @@ var printUsage = function() {
 			+ '          "keyColumn": "I",\n'
 			+ '          "valueColumn": "H",\n'
 			+ '          "firstLine": 2,\n'
-			+ '          "lastLine": 7\n'
+			+ '          "lastLine": 7,\n'
+			+ '          "escape": false\n'
 			+ '     }\n',
 		raw: true	
+	  },
+	  {
+	  	content: 'escape option specify if special characters like \\ must be escaped. Default value is true.'
 	  },
 	  {
 	    header: 'TO-JSON',

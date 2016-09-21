@@ -56,9 +56,12 @@ If `<into-properties-file>` file does not exist, it will be created.
 	"keyColumn": "I",
 	"valueColumn": "H",
 	"firstLine": 2,
-	"lastLine": 7
+	"lastLine": 7,
+	"escape": false
 }
  ```
+`escape` option specify if special characters like `\` must be escaped. Default value is `true`.
+
 
 ### to-json
 
