@@ -2,28 +2,33 @@ var expect = require("chai").expect;
 
 var fse = require('fs-extra');
 
-var main = require('../../main');
+var tmp = require('tmp');
 
 var fjson = require('format-json');
 
-describe("To JSON Command", function() {
-  it("Convert properties file to JSON file", function() {
+var main = require('../../main');
 
-    var base = 'test/acceptance/data/json-test';
+var base; 
+
+before(function() {
+
+    base = tmp.dirSync().name;
+
+    fse.copySync('test/acceptance/data/json-test', base);
+});
+
+describe("props to-json", function() {
+  it("convert properties file to JSON file", function() {
 
     var fromFilePath =  base + '/to_json_from.properties';
     
     var intoFilePath =  base + '/to_json_into.json';
 
-    var actualFilePath = base + '/to_json_actual.json';
-
     var expectedFilePath = base + '/to_json_expected.json';
 
-    fse.copySync(intoFilePath, actualFilePath);
+    main.run(['to-json', fromFilePath, intoFilePath]);
 
-    main.run(['to-json', fromFilePath, actualFilePath]);
-
-    var actualContent = fse.readFileSync(actualFilePath, 'utf8').toString();
+    var actualContent = fse.readFileSync(intoFilePath, 'utf8').toString();
 
     actualContent = fjson.diffy(JSON.parse(actualContent));
 
