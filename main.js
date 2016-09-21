@@ -112,7 +112,7 @@ var readJson = function(path) {
 
 var writeJson = function(path, data) {
 	
-	var content = JSON.stringify(data);
+	var content = JSON.stringify(data, null, 4);
 
 	fs.writeFileSync(path, content, { 
 		encoding: 'utf8',
