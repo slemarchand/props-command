@@ -202,15 +202,21 @@ var extractFromExcel = function(excelPath, config, path) {
 		}
 	*/
 
-	var keyCol = config.keyColumn,
-	 	valueCol = config.valueColumn,
-	 	start = config.firstLine
-	 	end = config.lastLine,
-	 	preserveBackslash = config.preserveBackslash;
+	var defaultConfig = {
+
+		escape: true
+	};
+
+	var actualConfig = Object.assign({}, defaultConfig, config);
+
+	var keyCol = actualConfig.keyColumn,
+	 	valueCol = actualConfig.valueColumn,
+	 	start = actualConfig.firstLine
+	 	end = actualConfig.lastLine
 
 	var workbook = XLSX.readFile(excelPath);	
 
-	var worksheet = workbook.Sheets[config.sheet];
+	var worksheet = workbook.Sheets[actualConfig.sheet];
 
 	if(!worksheet || worksheet == null) {
 		workbook.Sheets[workbook.SheetNames[0]];
@@ -238,7 +244,7 @@ var extractFromExcel = function(excelPath, config, path) {
 
 		if(propKey && propKey !== "" && propValue && propValue !== "" ) {
 
-			if(preserveBackslash) {
+			if(!actualConfig.escape) {
 				propValue = eval('"' + propValue.replace(/"/g,'\\"') + '"');
 			}
 
