@@ -2,7 +2,7 @@ var expect = require("chai").expect;
 
 var stdout = require("test-console").stdout;
 
-var main = require('../../main');
+var main = require('../../lib/main');
 
 describe("Usage", function() {
   it("write some long text to the console", function() {

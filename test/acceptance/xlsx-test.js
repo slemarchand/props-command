@@ -4,7 +4,7 @@ var fse = require('fs-extra');
 
 var tmp = require('tmp');
 
-var main = require('../../main');
+var main = require('../../lib/main');
 
 var base; 
 

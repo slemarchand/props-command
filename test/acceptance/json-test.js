@@ -6,7 +6,7 @@ var tmp = require('tmp');
 
 var fjson = require('format-json');
 
-var main = require('../../main');
+var main = require('../../lib/main');
 
 var base; 
 
