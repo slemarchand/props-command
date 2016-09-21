@@ -76,7 +76,7 @@ var run = function(args) {
 
 	}  else {
 
-		raiseArgsError();
+		printUsage();
 	}
 }
 
