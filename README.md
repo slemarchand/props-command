@@ -1,6 +1,7 @@
 # props-command
 Command-line tool to manipulate Java properties files
 
+[![NPM version][npm-image]][npm-url]
 [![Build Status](https://travis-ci.org/slemarchand/props-command.svg?branch=master)](https://travis-ci.org/slemarchand/props-command)
 [![Coverage Status](https://coveralls.io/repos/github/slemarchand/props-command/badge.svg?branch=master)](https://coveralls.io/github/slemarchand/props-command?branch=master)  
 [![NPM][nodei-image]][nodei-url]
@@ -73,5 +74,7 @@ Each property extracted from `<properties-file>` is added to `<json-file>`. For 
 
 If `<json-file>` file does not exist, it will be created.
 
+[npm-url]: https://www.npmjs.com/package/props-command
+[npm-image]: https://img.shields.io/npm/v/props-command.svg
 [nodei-image]: https://nodei.co/npm/props-command.png
 [nodei-url]: https://www.npmjs.com/package/props-command
