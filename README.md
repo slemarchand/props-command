@@ -3,7 +3,11 @@ Command-line tool to manipulate Java properties files
 
 [![NPM version][npm-image]][npm-url]
 [![Build Status](https://travis-ci.org/slemarchand/props-command.svg?branch=master)](https://travis-ci.org/slemarchand/props-command)
-[![Coverage Status](https://coveralls.io/repos/github/slemarchand/props-command/badge.svg?branch=master)](https://coveralls.io/github/slemarchand/props-command?branch=master)  
+[![Coverage Status](https://coveralls.io/repos/github/slemarchand/props-command/badge.svg?branch=master)](https://coveralls.io/github/slemarchand/props-command?branch=master)
+[![Dependency Status][david-image]][david-url] 
+[![devDependency Status][david-dev-image]][david-dev-url] 
+[![peerDependency Status][david-peer-image]][david-peer-url]  
+
 [![NPM][nodei-image]][nodei-url]
 
 ## Installation
