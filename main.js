@@ -103,9 +103,13 @@ var write = function(path, data) {
 
 var readJson = function(path) {
 
-	var content = fs.readFileSync(path, 'utf8').toString();
+	var data, content = fs.readFileSync(path, 'utf8').toString();
 
-	var data = JSON.parse (content);
+	if(content.trim().length == 0) {
+		data = {}; 
+	} else {
+		data = JSON.parse (content);
+	}
 
 	return data;
 };
