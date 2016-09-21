@@ -76,5 +76,13 @@ If `<json-file>` file does not exist, it will be created.
 
 [npm-url]: https://www.npmjs.com/package/props-command
 [npm-image]: https://img.shields.io/npm/v/props-command.svg
+
+[david-url]: https://david-dm.org/slemarchand/props-command
+[david-image]: https://img.shields.io/david/slemarchand/props-command.svg
+[david-dev-url]: https://david-dm.org/slemarchand/props-command#info=devDependencies
+[david-dev-image]: https://david-dm.org/slemarchand/props-command/dev-status.svg
+[david-peer-url]: https://david-dm.org/slemarchand/props-command#info=peerDependencies
+[david-peer-image]: https://david-dm.org/slemarchand/props-command/peer-status.svg
+
 [nodei-image]: https://nodei.co/npm/props-command.png
 [nodei-url]: https://www.npmjs.com/package/props-command
