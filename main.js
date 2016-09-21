@@ -202,11 +202,11 @@ var extractFromExcel = function(excelPath, config, path) {
 		}
 	*/
 
-
 	var keyCol = config.keyColumn,
 	 	valueCol = config.valueColumn,
 	 	start = config.firstLine
-	 	end = config.lastLine;
+	 	end = config.lastLine,
+	 	preserveBackslash = config.preserveBackslash;
 
 	var workbook = XLSX.readFile(excelPath);	
 
@@ -237,6 +237,10 @@ var extractFromExcel = function(excelPath, config, path) {
 		var propValue = worksheet[propValueAddress].v;
 
 		if(propKey && propKey !== "" && propValue && propValue !== "" ) {
+
+			if(preserveBackslash) {
+				propValue = eval('"' + propValue.replace(/"/g,'\\"') + '"');
+			}
 
 			data[propKey] = propValue;
 		}
