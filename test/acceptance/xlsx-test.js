@@ -23,13 +23,13 @@ describe("props from-xlsx", function() {
 
     var configFilePath = base + '/from_xlsx_config.json';
 
-    var actualFilePath = base + '/from_xlsx_actual.properties';
+    var intoFilePath = base + '/from_xlsx_into.properties';
     
     var expectedFilePath = base + '/from_xlsx_expected.properties';
 
-    main.run(['from-xlsx', inputFilePath, configFilePath, actualFilePath]);
+    main.run(['from-xlsx', inputFilePath, configFilePath, intoFilePath]);
 
-    var actualContent = fse.readFileSync(actualFilePath, 'utf8').toString();
+    var actualContent = fse.readFileSync(intoFilePath, 'utf8').toString();
 
     var expectedContent = fse.readFileSync(expectedFilePath, 'utf8').toString();
 
