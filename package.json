@@ -37,6 +37,7 @@
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
     "mocha-lcov-reporter": "^1.2.0",
-    "test-console": "^1.0.0"
+    "test-console": "^1.0.0",
+    "tmp": "0.0.29"
   }
 }
