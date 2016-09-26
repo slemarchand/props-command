@@ -3,6 +3,5 @@
     "keyColumn": "B",
     "valueColumn": "D",
     "firstLine": 4,
-    "lastLine": 11,
-    "escape": false
+    "lastLine": 11
 }
