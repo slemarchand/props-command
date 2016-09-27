@@ -1,6 +1,6 @@
 {
   "name": "props-command",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Command-line tool to manipulate Java properties files",
   "scripts": {
     "test": "mocha --reporter spec",
