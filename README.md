@@ -67,6 +67,24 @@ If `<into-properties-file>` file does not exist, it will be created.
  ```
 `escape` option specify if special characters like `\` must be escaped. Default value is `false`.
 
+#### Filter
+
+In order to skip some lines, it's possible to define a filter, testing a particular column for a particular value.
+
+```json
+{
+	"sheet": "Sheet 1",
+	"keyColumn": "I",
+	"valueColumn": "H",
+	"firstLine": 2,
+	"lastLine": 7,
+	"escape": true,
+	"filter": {
+		"column": "C",
+		"value": "OK"
+	}
+}
+ ```
 
 ### to-json
 
