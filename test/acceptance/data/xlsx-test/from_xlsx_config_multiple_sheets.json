@@ -1,0 +1,13 @@
+{
+    "sheets": [
+    	"Sheet1",
+    	"Sheet2"
+    ],
+    "keyColumn": "B",
+    "valueColumn": "D",
+    "firstLine": 4,
+    "filter": {
+    	"column": "C",
+    	"value": "go"
+    }
+}

@@ -84,6 +84,27 @@ In order to skip some lines, it's possible to define a filter, testing a particu
 }
  ```
 
+ #### Multiple sheets
+
+It's possible to extract properties from multiple sheets, using `sheets` field instead of `sheet` field.
+
+```json
+{
+	"sheets": [
+		"Sheet1",
+		"Sheet2"
+	],	
+	"keyColumn": "I",
+	"valueColumn": "H",
+	"firstLine": 2,
+	"escape": true,
+	"filter": {
+		"column": "C",
+		"value": "OK"
+	}
+}
+ ```
+
 ### to-json
 
 ```bash

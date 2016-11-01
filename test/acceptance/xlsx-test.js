@@ -8,7 +8,9 @@ var main = require('../../lib/main');
 
 var base; 
 
-before(function() {
+beforeEach(function() { 
+
+    // Very important here to use beforeEach() rather than before()!
 
     base = tmp.dirSync().name;
 
@@ -43,6 +45,26 @@ describe("props from-xlsx", function() {
     var inputFilePath =  base + '/from_xlsx_input.xlsx';
 
     var configFilePath = base + '/from_xlsx_config_default_sheet.json';
+
+    var intoFilePath = base + '/from_xlsx_into.properties';
+    
+    var expectedFilePath = base + '/from_xlsx_expected.properties';
+
+    main.run(['from-xlsx', inputFilePath, configFilePath, intoFilePath]);
+
+    var actualContent = fse.readFileSync(intoFilePath, 'utf8').toString();
+
+    var expectedContent = fse.readFileSync(expectedFilePath, 'utf8').toString();
+
+    expect(actualContent).to.equal(expectedContent);
+
+  });
+
+  it("extract properties file from XLSX file, supporting multiple sheets", function() {
+
+    var inputFilePath =  base + '/from_xlsx_input_multiple_sheets.xlsx';
+
+    var configFilePath = base + '/from_xlsx_config_multiple_sheets.json';
 
     var intoFilePath = base + '/from_xlsx_into.properties';
     
