@@ -22,7 +22,7 @@
     "command-line-usage": "^3.0.3",
     "coveralls": "^2.11.14",
     "file-exists": "^2.0.0",
-    "fs-extra": "^0.30.0",
+    "fs-extra": "^1.0.0",
     "moment": "^2.14.1",
     "properties": "^1.2.1",
     "xlsx": "^0.8.0"
