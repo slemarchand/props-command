@@ -3,7 +3,6 @@
     "keyColumn": "B",
     "valueColumn": "D",
     "firstLine": 4,
-    "lastLine": 13,
     "filter": {
     	"column": "C",
     	"value": "go"

@@ -61,7 +61,6 @@ If `<into-properties-file>` file does not exist, it will be created.
 	"keyColumn": "I",
 	"valueColumn": "H",
 	"firstLine": 2,
-	"lastLine": 7,
 	"escape": true
 }
  ```
@@ -77,7 +76,6 @@ In order to skip some lines, it's possible to define a filter, testing a particu
 	"keyColumn": "I",
 	"valueColumn": "H",
 	"firstLine": 2,
-	"lastLine": 7,
 	"escape": true,
 	"filter": {
 		"column": "C",
