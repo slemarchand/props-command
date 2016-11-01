@@ -1,0 +1,8 @@
+{
+    "keyColumn": "B",
+    "valueColumn": "D",
+    "filter": {
+    	"column": "C",
+    	"value": "go"
+    }
+}
