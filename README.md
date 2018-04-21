@@ -7,6 +7,7 @@ Command-line tool to manipulate Java properties files
 [![Dependency Status][david-image]][david-url] 
 [![devDependency Status][david-dev-image]][david-dev-url] 
 [![peerDependency Status][david-peer-image]][david-peer-url]  
+[![Codacy Badge][codacy-image]][codacy-url] 
 
 [![NPM][nodei-image]][nodei-url]
 
@@ -124,6 +125,7 @@ If `<json-file>` file does not exist, it will be created.
 [david-dev-image]: https://david-dm.org/slemarchand/props-command/dev-status.svg
 [david-peer-url]: https://david-dm.org/slemarchand/props-command#info=peerDependencies
 [david-peer-image]: https://david-dm.org/slemarchand/props-command/peer-status.svg
-
+[codacy-url]: https://www.codacy.com/app/slemarchand/props-command?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=slemarchand/props-command&amp;utm_campaign=Badge_Grade
+[codacy-image]: https://api.codacy.com/project/badge/Grade/7544a7f832974674907fd152df7dfa0c
 [nodei-image]: https://nodei.co/npm/props-command.png
 [nodei-url]: https://www.npmjs.com/package/props-command
