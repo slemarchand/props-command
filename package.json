@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "array-includes": "^3.0.3",
-    "command-line-usage": "^3.0.3",
+    "command-line-usage": "^3.0.8",
     "file-exists": "^2.0.0",
     "fs-extra": "^1.0.0",
     "moment": "^2.22.1",
