@@ -6,7 +6,6 @@ Command-line tool to manipulate Java properties files
 [![Coverage Status](https://coveralls.io/repos/github/slemarchand/props-command/badge.svg?branch=master)](https://coveralls.io/github/slemarchand/props-command?branch=master)
 [![Dependency Status][david-image]][david-url] 
 [![devDependency Status][david-dev-image]][david-dev-url] 
-[![peerDependency Status][david-peer-image]][david-peer-url]  
 [![Codacy Badge][codacy-image]][codacy-url] 
 
 [![NPM][nodei-image]][nodei-url]
@@ -123,8 +122,6 @@ If `<json-file>` file does not exist, it will be created.
 [david-image]: https://img.shields.io/david/slemarchand/props-command.svg
 [david-dev-url]: https://david-dm.org/slemarchand/props-command#info=devDependencies
 [david-dev-image]: https://david-dm.org/slemarchand/props-command/dev-status.svg
-[david-peer-url]: https://david-dm.org/slemarchand/props-command#info=peerDependencies
-[david-peer-image]: https://david-dm.org/slemarchand/props-command/peer-status.svg
 [codacy-url]: https://www.codacy.com/app/slemarchand/props-command?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=slemarchand/props-command&amp;utm_campaign=Badge_Grade
 [codacy-image]: https://api.codacy.com/project/badge/Grade/7544a7f832974674907fd152df7dfa0c
 [nodei-image]: https://nodei.co/npm/props-command.png
