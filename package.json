@@ -18,21 +18,20 @@
     "props": "index.js"
   },
   "dependencies": {
-    "array-includes": "^3.0.2",
+    "array-includes": "^3.0.3",
     "command-line-usage": "^3.0.3",
-    "coveralls": "^2.11.14",
     "file-exists": "^2.0.0",
     "fs-extra": "^1.0.0",
     "moment": "^2.22.1",
     "properties": "^1.2.1",
-    "xlsx": "^0.8.0"
+    "xlsx": "^0.13.0"
   },
   "engines": {
     "node": ">=4.5.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "coveralls": "^2.11.14",
+    "coveralls": "^3.0.1",
     "format-json": "^1.0.3",
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
